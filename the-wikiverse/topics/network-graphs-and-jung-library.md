@@ -5,6 +5,7 @@
 This document and codebase are only a summary of the research done in the course of this project, if you're interested in reading there is a [reference handbook](docs/../references/graphs_handbook_full/0_contents.pdf) which does a tremendous job summarizing about every piece of Graph Theory out there. [Chapter 12: Force Directed Graphs](dev/../references/graphs_handbook_full/12_force-directed.pdf) is the chapter relevant to the rest of this doc, and was written by [Stephen G. Kobourov](https://scholar.google.com/citations?user=P21gHIkAAAAJ&hl=en) a widely cited and recognized expert in the field.
 
 ## Force Drawn Graphs & The Fruchterman-Reingold Algorithm
+
 Force Drawn Graph layout algorithims take inspiration from real life physical systems, and use them as a means of solving for a practical solution to the layout generation problem. Imagining a graph as ["a system of springs connecting steel rings"](docs/../references/1201.3011v1.pdf) conceptualizes a system constantly trying to find a best position for each ring (node). Then using physical law's and constants like [Hooke's Law](https://en.wikipedia.org/wiki/Hooke%27s_law) or [Coulomb's Law](https://en.wikipedia.org/wiki/Coulomb%27s_law) to give numerical significane to the forces happening at each spring (`Edge`), this suddenly becomes a very (big) recursive math problem.
 
 The above summary does a lot to smooth over huge intellectual accomplishments in the field of Graph Theory. [W.T. Tutte's](https://en.wikipedia.org/wiki/W._T._Tutte) early work on Graph layouts very much mirror the initial ideation of a layout which started this app. [Finding Centroids](https://github.com/horaciovelvetine/finding-centroids) is a visualization of the exact concept Tutte used, and [the Weighted Average Layout Readme](docs/../WEIGHTED_AVERAGE_LAYOUT.md) includes a java implementation and explanation as well. [Peter Eades](https://en.wikipedia.org/wiki/Peter_Eades) brought the "Spring Embedder" model to help minimize crossover in edges and leveraged physical force based modelling to more naturally and evenly disperse nodes.
@@ -14,6 +15,7 @@ The most relevant of these contributions are those of Fruchterman-Reingold, name
 The below example is written to highlight and outline the flow of how this algorithm goes about finding a solution:
 
 ## Java Fruchterman-Reingold Example
+
 ```java
 import java.awt.geom.Point2D;
 import java.util.HashMap;
@@ -98,7 +100,9 @@ public class FruchtermanReingoldLayout {
 }
 
 ```
+
 ## JUNG Layouts's's
+
 Inside the [JUNG Library](https://github.com/jrtom/jung) there are two different implementations of the Fruchterman-Reingold layout algorithm. In examining these algorithims there's an opportunity to explore some Google (adjacent) code, test the differences, and get into the weeds of theorized code choices (making things up). First there are a few confusing details to iron out here on which number is what, what the implementations do differently, and how the Fruchterman-Reingold layout algorithm actually works. 
 
 Fundamentally a set of vertices (which are instantiated with random `Point2D`'s) are iterated over, compared to each other vertex in the set where:
@@ -109,6 +113,7 @@ Fundamentally a set of vertices (which are instantiated with random `Point2D`'s)
 
 
 ## Extending the Fruchterman-Reingold Algoritihm into 3D
+
 Originally doing research for libraries to dissect in working with Graph's the [JUNG project](https://github.com/jrtom/jung) stood out as an interesting place to start. Firstly, there are "two" JUNG's, a previous iteration of the project still [publically available on Sourceforge](https://jung.sourceforge.net/) - and the current "2.1" release which is actively maintained. Interestingly there are [hints in the docs](https://jung.sourceforge.net/doc/api/index.html) (see: `jung.algorithms.layout3D`) of the previous release that there were potentially efforts in place to extend the Layout interface(s) to work with 3 dimensional layouts.
 
 Typically graph visualization layout's aren't done in 3D for a few reasons: less visually understandable, additional compute expense which doesnt 'improve' the result, and the increase in system (client-side) requirements to render 3D graphics. (*i.e. is expensive*)
@@ -116,6 +121,7 @@ Typically graph visualization layout's aren't done in 3D for a few reasons: less
 In an effort to take this torch, and implement it in this application - it's crucial to understand a few details about how these layouts are written.
 
 ## The Google-phant in the Room
+
 The JUNG codebase inherits and uses the [guava](https://github.com/google/guava) heavily - so starting at the (ha!) [Wiki](https://github.com/google/guava/wiki) is probably an important first step. Functionally each layout in the library start by extending `Function<V, Point2D>`, requiring the implementation of an `apply(F input) => <T>` method, or, "A function which, provided a `Vertex` object `V` return the correlated `Point2D` coordinates. 
 
 Given the inheritence structure extending these algorithims to 3D would require a fundamental rewrite and possible inclusion (or creation) of a `Point3D` class - something not included anywhere in the `import java.awt.geom.*;` library. Of course some quick research will show there are alternatives like: `import javafx.geometry.Point3D`, but given the histroy of the library and the chaotic nature of 3D layouts, I imagine the pro's and con's were discussed and subsequently sidelined for 2.1's release and transfer.
@@ -151,6 +157,7 @@ Iterable solutions rely on a second store to persist the offset calculations acc
 The `step()` method consists of three main function calls while calculating a full iteration: `calcRepulsion(V v) => calcAttraction(E e) => calcPosition(V v)` with the logical flow following that order. Resetting each vertice's offset position to (0,0) happens in `calcRepulsion(V v)` ending when that offset is used and applied inside of `calcPosition(V v)`. 
 
 ## FRLayout vs. FRLayout2: Differences Summarized
+
   - `FRLayout2` implements handling frozen nodes differently from `FRLayout`, where the first implementation will skip updating pair's that are frozen, `FR2` allows for this one sided relationship by compensating in the calculated change for the unfrozen node. This happens across a few of the methods: `calcPositions() calcAttractions() calcRepulsion()`. From the comments and any reading that could be found, this may improve the overall accuracy and visual appearance of the resultant layout - but it is not clear just from reading. Heat-mapping the process and running each - it appears this *may* have the effect of not exiting early on adjustments which could be made which may lead to a validly stable solution earlier. 
   - `FR2` includes some movement constraint logic to limit 'big' jumps in the `calcPositions()` method, given the above optimization it seems these two almost act to balance each others effects across the algorithims methods. 
   - Small changes are made to the way boundaries, and boundary checking are handled. The includsion of a `Rectangle2D innerBounds` at the class variable level provides a class wide access to a means of checking boundaries haven't been exceeded by any member of the layout - possibly an improvement in not looking this up inside the heavily called `calculateOffset()` method.

@@ -1,0 +1,50 @@
+# A Wikidata Introduction: 
+
+The [Wikimedia](https://www.wikimedia.org/) foundation is a non-profit with the mission is to provide free educational content to the world. Under the umbrella of this non-profit is [Wikidata](https://www.wikidata.org/wiki/Wikidata:Main_Page), which provides a staggering amount of data (as of 6/30/2024 this is some 110 million entries) in a wide array of formats for any conceivable type of project. The flexibility and size of this resource is both its greatest strength and weakness. 
+
+Approaching this monolith from the outside can be immediately overwhelming, and I wanted to provide a bit of an overview/guide that might be helpful for a 'Wikidata newbie'. To get started you should check out the [Wikidata Introduction](https://www.wikidata.org/wiki/Wikidata:Introduction), it provides a What/How/Where' outline of Wikidata and only takes about 5 minutes to read. It's important at this point to remember that Wikidata is not Wikipedia, both projects exist under the Wikimedia umbrella, but the shape of the data stored in Wikidata isn't used for only Wikipedia pages. The purpose of Wikidata is to store **ALL** of the data that any Wiki project might use, this means the data model has to be flexible and support [a huge list of other projects](https://wikimediafoundation.org/what-we-do/wikimedia-projects/#a1-reference),a variety of languages, files including pictures, and even geospatial data to be effective. It's easy as a beginner to attempt to connect the data model with Wikipedia to orient yourself with some degree of understanding, but this will leave you trying to fit a square peg in a round hole and confused.
+
+The [Wikidata Tour](https://www.wikidata.org/wiki/Wikidata:Tours) is a great next step in tandem with [Wikidata Glossary](https://www.wikidata.org/wiki/Wikidata:Glossary) to continue to dig into the overall shape of the data.
+
+## The Big Data:
+
+Central to understanding Wikidata is [the what of the data](https://www.wikidata.org/wiki/Help:About_data). Providing a structure flexible enough to accommodate basically anything must have been an enormously challenging undertaking, but they have done an enormously effective job as in the end Wikidata stores: **Values about Things**. The first thing to understand are the **Things**, or more often referred to as **Items**. An Item in Wikidata is a flexible model which can represent abstract concepts and ideas like: [anger](https://www.wikidata.org/wiki/Q79871), [wind](https://www.wikidata.org/wiki/Q8094), or [Pythagorean theorem](https://www.wikidata.org/wiki/Q11518), and also real-world things like: [The Titanic](https://www.wikidata.org/wiki/Q25173), [Hungary](https://www.wikidata.org/wiki/Q28), or even [Wikidata Itself](https://www.wikidata.org/wiki/Q2013). If you visit those pages, you'll notice that there are some consistent attributes which define an Item, each Item has its own `QID` (e.g. `Q28`) a unique identifier which follows the `Q####` pattern. Next, you'll notice they always have a label - labels are the 'most accurate' human friendly name for an Item and can be included in any language. Next is the description, a description is useful for further differentiating an Item when the label might be generic, and it provides a short summary with a few more details about the Item. Lastly are the Aliases, more colloquially these might be called 'nicknames', and they serve as an alternate means of finding (when searching) or identifying them.
+
+Underneath an **Item** you'll find a series of entries called **Statements**. Statements make up the other half of the '*Values about Things*' axiom i.e. '*Values about*'. A Statement is best thought of in its natural language form, for example: 
+
+`The Java programming language's author is James Gosling. `
+
+The above example details information about the Java programming languages author, it makes up a storable data which can then be easily stored as a **Statement**, belonging to the Java programming language **Item**. Another way to break down this statement is:
+
+`(Q251) Java (OO programming language) 's => (P50) Author is => (Q92622) James Gosling (Canadian computer scientist) `
+
+Adding in the `QID`'s you can see this statement reference two **Items** and is connected by a new kind of Wikidata entity, the **Property**. A **Property** defines a category of data and can be any number of things you might want to store about an **Item**. In this example the **Property** has a value that is another **Item** `(Q92622) James Gosling`, but the value can be any type of storable data: strings, numbers, GPS coordinates, external database ID's, or even dates. **Properties** follow a similar convention to an **Item** with a unique identifier following the `P####` format, a label, and a description. **Properties** also serve an important function defining the types of data which can be stored as a value preventing the use of the string 'blue' for somebody’s birthday. 
+
+See: 
+  - [Java](https://www.wikidata.org/wiki/Q251)
+  - [Author](https://www.wikidata.org/wiki/Property:P50)
+  - [James Gosling](https://www.wikidata.org/wiki/Q92622)
+
+## Using The Actual Data:
+
+Possibly the most unclear choice when beginning to look at Wikidata is just how best to [get at the data](https://www.wikidata.org/wiki/Wikidata:Data_access) you actually need. This data and access are provided for free and for the good of learning, so it's imperative you [read and respect the standards and etiquette](https://www.mediawiki.org/wiki/API:Etiquette) before jumping in and making edits and request's. 
+
+There are two fundamental ways to use Wikidata, requesting data, or having a copy. Requesting the data requires use of one of several different API endpoint or query services, while having the data requires downloading copies of the data. The tradeoffs here should be mostly clear, but it's easy to underestimate just how much data is in a dump-file, and the kind of compute and connection needed to use these effectively. A pretty good rule of thumb is if you're reading this intro, requesting data through on of the API's is likely going to the right choice for you. 
+
+MediaWiki (adjacent tech Wiki project) provides two primary API's for interacting with underlying Wikidata: [the Action API](https://www.mediawiki.org/wiki/API:Action_API), and [the REST API](https://www.mediawiki.org/wiki/API:REST_API). The differences between these two endpoints are a bit out of the scope of an introduction to Wikidata article, but you should know they both exist and read to find which best suits your needs. The [REST API reference](https://www.mediawiki.org/wiki/API:REST_API) will likely be good place to start for beginners since the REST is ubiquitous standard for making requests, and MediaWiki does a good job adhering to standards and documenting its implementation details.
+
+Lastly worth mentioning in this section is the [Wikidata Query Service](https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/Wikidata_Query_Help). This is intended to be used for projects asking questions about the underlying data and takes some considerable domain knowledge to be useful. This service uses [SPARQL](https://en.wikipedia.org/wiki/SPARQL), a 'Resource Description Framework' (or *RDF*) to request information about Wikidata and will require some proficiency in this domain to be used effectively. *RDF* is a [W3C Resource Description Framework](https://www.w3.org/RDF/) standard composed of 'directed graph triplet statements' which uses [W3C SPARQL: Query Language](https://www.w3.org/TR/rdf-sparql-query/) and is best suited for answering questions about smaller subsets of the underlying data. 
+
+## Having the Data:
+
+[Wikidata's Database Downloading](https://www.wikidata.org/wiki/Wikidata:Database_download): Wikimedia regularly dumps ***ALL*** of its information to allow [hosting your own local query service](https://www.mediawiki.org/wiki/Wikidata_Query_Service/User_Manual#Standalone_service). This is really suited best for research applications having a lot of compute power ready at hand, as the size of these dumps will *ruin* the average machine. Each full dump takes ***12 days*** to complete, and the ZIP files unpack to hundreds of Terabytes in size. 
+
+## Wikibase as a Service and You:
+
+[Wikibase](https://wikiba.se/) is an open source [Wikimedia Deutschland](https://meta.wikimedia.org/wiki/Wikimedia_Deutschland) project which provides data management tools, hosting infrastructure, and a lot of other resources for projects ***OF ANY SIZE***. Before you decide to redo the how & what of hosting and docker-izing, there is likely an example, utility, or tool already finished to help you accomplish just that.
+
+[Wikibase Cloud](https://www.wikibase.cloud/): Provides hosting infrastructure along with a complete install of [Wikibase Suite](https://www.mediawiki.org/wiki/Wikibase/Docker) which is the open source software suite designed for creating your own Wiki-project. This tight coupling with the Wikimedia organization embraces their knowledge for all approach so check out the [docs](https://doc.wikimedia.org/Wikibase/master/php/index.html) to see what might work best for your project. 
+
+## Language Tools for Devs:
+
+Finally, it's important to mention, *YOU DONT HAVE TO DO ALL THE WORK YOURSELF*! A significant and fantastically helpful community of developers already exist inside the Wiki umbrella. Tools in a variety of languages have been developed to provide frameworks and means of interacting with Wikidata's information directly using the API's and methods described above. [Starting here](https://www.wikidata.org/wiki/Wikidata:Tools/For_programmers) you can see a list of information for a huge list of the community led projects available for each language. It's important to emphasize that these are open-source projects with time and resources donated by volunteers in the community. This list is not a comprehensive (or often even up to date) list of community projects, and you should check out the code/community around a tool to double check it is being actively worked on.
