@@ -18,7 +18,7 @@ The frontend relies on the [P5.js](https://p5js.org/) library which provides a g
 
 As of now the frontend may be integrated/developed here as opposed to a standalone repository, but this detail is still being considered… I will post links to repositories/branches as soon as there are some things to post. 
 
-Lastly, as a part of the required coursework there will be weekly dev-log updates to track the overall progress being made, with the next post intending to layout a more detailed feature-set to define the ‘MVP’. I’m eager to get started, and looking forward to the ‘blue-sky’ planning phase coming next week where I can ideate and iterate on the lessons learned from the prototype.
+Lastly, as a part of the required coursework there will be weekly dev-log updates to track the overall progress being made, with the next post intending to layout a more detailed feature-set to define the ‘MVP’. I’m eager to get started and looking forward to the ‘blue-sky’ planning phase coming next week where I can ideate and iterate on the lessons learned from the prototype.
 
 Brb. @horaciovelvetine
 
