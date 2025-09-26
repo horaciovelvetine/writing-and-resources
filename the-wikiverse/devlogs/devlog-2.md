@@ -4,7 +4,7 @@ Last week's update set the expectation of a feature outline, so this week I imme
 
 ## The Prototype in the Room
 
-![V0.0.2 Alpha Prototype](../../assets/wikiverse-kevin-bacon-result-v2.png)
+![V0.0.2 Alpha Prototype](https://raw.githubusercontent.com/horaciovelvetine/writing-and-resources/main/assets/wikiverse-kevin-bacon-result-v2.png)
 
 The Alpha of this project was deployed to be shared with a handful of people for testing in the latter half of 2024. These tests were informal and were used as a chance to get feedback about the UI/UX, test the performance across a variety of devices, and get ideas for improvements that would make it more useful. Towards the beginning of the year in 2025 some breaking changes happened in [the Wikidata Toolkit](https://github.com/Wikidata-Toolkit/Wikidata-Toolkit), (somewhat) officially marking the end of the Alpha testing. This break in the development cyclce provided some time to reflect, focus on other projects, and take a break to think about next steps for the Wikiverse.
 
