@@ -6,28 +6,27 @@ Last week's update set the expectation of a feature outline, so this week I imme
 
 ![V0.0.2 Alpha Prototype](https://raw.githubusercontent.com/horaciovelvetine/writing-and-resources/main/assets/wikiverse-kevin-bacon-result-v2.png)
 
-The Alpha of this project was deployed to be shared with a handful of people for testing in the latter half of 2024. These tests were informal and were used as a chance to get feedback about the UI/UX, test the performance across a variety of devices, and get ideas for improvements that would make it more useful. Towards the beginning of the year in 2025 some breaking changes happened in [the Wikidata Toolkit](https://github.com/Wikidata-Toolkit/Wikidata-Toolkit), (somewhat) officially marking the end of the Alpha testing. This break in the development cyclce provided some time to reflect, focus on other projects, and take a break to think about next steps for the Wikiverse.
+The Alpha of this project was deployed to be shared with a handful of people for testing in the latter half of 2024. These tests were informal and were used as a chance to get feedback about the UI/UX, test the performance across a variety of devices, and get ideas for improvements that would make it more useful. Towards the beginning of the year in 2025 some breaking changes happened in [the Wikidata Toolkit](https://github.com/Wikidata-Toolkit/Wikidata-Toolkit), (somewhat) officially marking the end of the Alpha testing. This break in the development cycle provided some time to reflect, focus on other projects, and take a break to think about next steps for the Wikiverse.
 
 In general, the next steps fell into 3 distinct categories:
 
-1. Development: a `Beta` release with a well defined features list
-2. Communnity: Joining the 'Meta-Wiki' (the Wikimedia Foundation's social network) community to seek feedback and present my work
+1. Development: a `Beta` release with a well-defined features list
+2. Community: Joining the 'Meta-Wiki' (the Wikimedia Foundation's social network) community to seek feedback and present my work
 3. Funding: Exploring potential grant opportunities offered by the Wikimedia Foundation to potentially handle hosting costs
 
-Having established these categories I patiently waited to jump back in and did not immediately stand up a new Spring Boot application in an effort to determine what happened with the breaking changes.
+Having established these categories I patiently waited to jump back in and did not immediately stand up a new Spring Boot application to determine what happened with the breaking changes.
 
 ## The Breaking Changes
 
-As it turns out [the issue](https://github.com/Wikidata-Toolkit/Wikidata-Toolkit-Examples/issues/7) was a [non-issue](https://github.com/Wikidata-Toolkit/Wikidata-Toolkit-Examples/pull/8) easily solved by updating the library to the newest version. Fortunately, this meant the 'breaking changes' would not be any sort of problem going forward, mini-crisis averted. However, through submitting the above issue I was able to get in touch with the maintainer of the library and even [contribute](https://github.com/Wikidata-Toolkit/Wikidata-Toolkit/pull/966) some of my own code to the Wikidata Toolkit! I'm mentioning this because this ended up being my first open-source contributions as a developer, and was an enormously rewarding feeling. The code contributed is meant to help newcomers to the library be able to get an idea for the shape of the data, and adds comments to help explain the [`FetchOnlineDataExample.java`](https://github.com/Wikidata-Toolkit/Wikidata-Toolkit/blob/master/wdtk-examples/src/main/java/org/wikidata/wdtk/examples/FetchOnlineDataExample.java).
+As it turns out [the issue](https://github.com/Wikidata-Toolkit/Wikidata-Toolkit-Examples/issues/7) was a [non-issue](https://github.com/Wikidata-Toolkit/Wikidata-Toolkit-Examples/pull/8) easily solved by updating the library to the newest version. Fortunately, this meant the 'breaking changes' would not be any sort of problem going forward, mini crisis averted. However, through submitting the above issue I was able to get in touch with the maintainer of the library and even [contribute](https://github.com/Wikidata-Toolkit/Wikidata-Toolkit/pull/966) some of my own code to the Wikidata Toolkit! I'm mentioning this because this ended up being my first open-source contributions as a developer and was an enormously rewarding feeling. The code contributed is meant to help newcomers to the library be able to get an idea for the shape of the data, and adds comments to help explain the [`FetchOnlineDataExample.java`](https://github.com/Wikidata-Toolkit/Wikidata-Toolkit/blob/master/wdtk-examples/src/main/java/org/wikidata/wdtk/examples/FetchOnlineDataExample.java).
 
-## Features and Folley
+## Features and Folly
 
-After a few attempts it feels like the best way to list out features is to go over the 'what'  
-from the perspective of the frontend i.e. 'What does each thing in the frontend do?'
+After a few attempts it feels like the best way to list out features is to go over the 'what.' from the perspective of the frontend i.e. 'What does each thing in the frontend do?'
 
 ### **UI/UX Components**
 
-Each of these components comprises a small piece of the overall UI/UX the user will interact with, and a few key details about what they should do. For now this is meant to be a high level and abstract overview of these components. Components may be subject to change over the course of the project, as often times 'the best' solution for UI becomes clear over the course of testing and iterating.
+Each of these components comprises a small piece of the overall UI/UX the user will interact with, and a few key details about what they should do. For now, this is meant to be a high level and abstract overview of these components. Components may be subject to change over the course of the project, as often 'the best' solution for UI becomes clear over the course of testing and iterating.
 
 #### **Hovered Vertex Details**
 
@@ -63,14 +62,14 @@ Each of these components comprises a small piece of the overall UI/UX the user w
 ```
 - Searches the current dataset for matches
 - Highlight/Target relevant match
-- Result list similar to original search to allow user to select
+- Result list like original search to allow user to select
 ```
 
 #### **Interaction History**
 
 ```
 - Track user selections for easy backtracking
-- User configureable number of interactions stored
+- User configurable number of interactions stored
 - Clicking an interaction highlights the target entity
 ```
 
@@ -163,14 +162,14 @@ Primary landing for the application, should re-create the functionality of the [
 
 ### About Page
 
-Answer the what, how, and why of using the Wikiverse. Provide screenshots where applicable.
+Answer what, how, and why of using the Wikiverse. Provide screenshots where applicable.
 
 ### Tutorial Page
 
-A 'narrative' tutorial and introduction to the Wikiverse UI/UX and how it can be used. Builds on features introducing them naturally to be accessible for any kind of user regardless of their relationship with technology. Use the real visualization as a guided tutorial
+A 'narrative' tutorial and introduction to the Wikiverse UI/UX and how it can be used. Builds on features introducing them naturally to be accessible for any kind of user regardless of their relationship with technology. Use the real visualization as a guided tutorial.
 
 ## Wrapping It Up
 
-The above features are a mix between some things which have already been implemented as a part of the prototype and new features derived from feedback and using the prototype. One of the most rewarding things to hear about the prototype was that it 'was a rabbit hole generator', where users expressed it was an engaging in that fun addictive kind of way. More than anything the goal for this `Beta` will be to build on that feeling, and continue to build something that is engaging and useful for people who love discovering new things, just like me.
+The above features are a mix between some things which have already been implemented as a part of the prototype and new features derived from feedback and using the prototype. One of the most rewarding things to hear about the prototype was that it 'was a rabbit hole generator', where users expressed it was an engaging in that fun addictive kind of way. More than anything the goal for this `Beta` will be to build on that feeling and continue to build something that is engaging and useful for people who love discovering new things, just like me.
 
 Brb @horaciovelvetine
