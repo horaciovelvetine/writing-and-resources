@@ -32,71 +32,71 @@ Each of these components comprises a small piece of the overall UI/UX the user w
 #### **Hovered Vertex Details**
 
 ```
-  - Title / Description display
-  - Shows related edge connections in Vis
+- Title / Description display
+- Shows related edge connections in Vis
 ```
 
 #### **Selected Vertex Details**
 
 ```
-  - Title / Description of Selected Vertex
-  - Links to source Wiki page
-  - Visually mirror the 'selected' Vertex in vis
-  - Provide additional 'right-click' menu interactions:
-    - Add / Edit / Remove from Groups
-    - Hide / Show Vertex
-    - Lock Vertex positions
+- Title / Description of Selected Vertex
+- Links to source Wiki page
+- Visually mirror the 'selected' Vertex in vis
+- Provide additional 'right-click' menu interactions:
+- Add / Edit / Remove from Groups
+- Hide / Show Vertex
+- Lock Vertex positions
 ```
 
 #### **Related Edges Details**
 
 ```
-  - Scrollable list of Edge Relationships
-  - Communicate directionality of vertex relationships
-  - Clickable Vertex targets highlight Vertex in vis
-  - Property click to define/display property (w/ desc.)
-  - Visually mirror the 'selected' Vertex in vis vs. non-selected Vertices
+- Scrollable list of Edge Relationships
+- Communicate directionality of vertex relationships
+- Clickable Vertex targets highlight Vertex in vis
+- Property click to define/display property (w/ desc.)
+- Visually mirror the 'selected' Vertex in vis vs. non-selected Vertices
 ```
 
 #### **Graph Search Input**
 
 ```
-  - Searches the current dataset for matches
-  - Highlight/Target relevant match
-  - Result list similar to original search to allow user to select
+- Searches the current dataset for matches
+- Highlight/Target relevant match
+- Result list similar to original search to allow user to select
 ```
 
 #### **Interaction History**
 
 ```
-  - Track user selections for easy backtracking
-  - User configureable number of interactions stored
-  - Clicking an interaction highlights the target entity
+- Track user selections for easy backtracking
+- User configureable number of interactions stored
+- Clicking an interaction highlights the target entity
 ```
 
 #### **Graphset Summary Overview**
 
 ```
-  - Summarize count details about the graph
-  - Live camera position for 3D mode
-  - Framerate indicator
+- Summarize count details about the graph
+- Live camera position for 3D mode
+- Framerate indicator
 ```
 
 #### **New Search Input**
 
 ```
-  - Input for starting search over
-  - Initial results selection list
+- Input for starting search over
+- Initial results selection list
 ```
 
 #### **Right Click Menu**
 
 ```
-  - Add vertex to group
-  - Remove vertex from graph (adds to filter)
-  - Show/Hide vertex from view
-  - Open Wiki source page
-  - Lock vertex position
+- Add vertex to group
+- Remove vertex from graph (adds to filter)
+- Show/Hide vertex from view
+- Open Wiki source page
+- Lock vertex position
 ```
 
 #### **Settings Menu(s):**
@@ -106,45 +106,45 @@ Tabbed layout under a single menu display component
 ##### **Sketch Behavior Menu:**
 
 ```
-  - Fetch related on click
-  - Display bounding box
-  - Display orientation axis
-  - 2D or 3D layout
-  - Target language
-  - Interaction history length
+- Fetch related on click
+- Display bounding box
+- Display orientation axis
+- 2D or 3D layout
+- Target language
+- Interaction history length
 ```
 
 ##### **Data Filters:**
 
 ```
-  - Excluded data w/ optional notes
-  - Add / edit / remove data
-  - QID specific targets
-  - Keyword specific targets
-  - Data-type specific targets
+- Excluded data w/ optional notes
+- Add / edit / remove data
+- QID specific targets
+- Keyword specific targets
+- Data-type specific targets
 ```
 
 ##### **Group Details:**
 
 ```
-  - Visual identifier settings (channel TBD)
-  - Keep group selected highlighted
-  - Add / edit / remove Vertices
-  - Group lock/unlock positions
-  - Reduce graphset to selected group
-  - Show / Hide group bounding box
+- Visual identifier settings (channel TBD)
+- Keep group selected highlighted
+- Add / edit / remove Vertices
+- Group lock/unlock positions
+- Reduce graphset to selected group
+- Show / Hide group bounding box
 ```
 
 ##### **Layout Settings:**
 
 ```
-    - Attraction multiplier
-    - Repulsion multiplier
-    - Data density
-    - Maximum layout iterations
-    - Maximum iteration movement
-    - Temperature curve multiplier
-    - Force adjustment multipliers
+- Attraction multiplier
+- Repulsion multiplier
+- Data density
+- Maximum layout iterations
+- Maximum iteration movement
+- Temperature curve multiplier
+- Force adjustment multipliers
 ```
 
 ### Landing/Home Page
@@ -152,13 +152,13 @@ Tabbed layout under a single menu display component
 Primary landing for the application, should re-create the functionality of the [Wikipedia](www.wikipedia.org) homepage.
 
 ```
-  - Primary search input
-  - Target Wiki language select
-  - Provide initial results list to select from
-  - De-bounce initial results to serve in real-time
-  - Links to About `Wikiverse` page
-  - Links to Tutorial page
-  - Active background from prototype
+- Primary search input
+- Target Wiki language select
+- Provide initial results list to select from
+- De-bounce initial results to serve in real-time
+- Links to About `Wikiverse` page
+- Links to Tutorial page
+- Active background from prototype
 ```
 
 ### About Page
@@ -171,6 +171,6 @@ A 'narrative' tutorial and introduction to the Wikiverse UI/UX and how it can be
 
 ## Wrapping It Up
 
-The above features are a mix between some things which have already been implemented as a part of the prototype and new features derived from feedback and using the prototype. One of the most rewarding things to hear about the prototype was that it 'was a rabbit hole generator', where users expressed it was an engaging in that fun addictive kind of way. More than anything the goal for this `Beta` will be to build on that feeling, and continue to build something that is engaging and useful for people who love discovering new things, just like me. 
+The above features are a mix between some things which have already been implemented as a part of the prototype and new features derived from feedback and using the prototype. One of the most rewarding things to hear about the prototype was that it 'was a rabbit hole generator', where users expressed it was an engaging in that fun addictive kind of way. More than anything the goal for this `Beta` will be to build on that feeling, and continue to build something that is engaging and useful for people who love discovering new things, just like me.
 
 Brb @horaciovelvetine
