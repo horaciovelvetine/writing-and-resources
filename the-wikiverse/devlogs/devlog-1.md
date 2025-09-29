@@ -16,7 +16,7 @@ The backend relied on two major tools throughout the prototyping phase worth men
 
 The frontend relies on the [P5.js](https://p5js.org/) library which provides a great toolset for creative 'drawing'. It's a little harder to capture the spirit of this library in words, but if you like creative coding and want to make some sort of interesting visual or game in the browser I highly suggest you start there. It includes access to WebGL through a handy API for 3D drawings and provides a 'frames based' paradigm which is accessible and easy to work with.
 
-As of now the frontend may be integrated/developed here as opposed to a standalone repository, but this detail is still being considered… I will post links to repositories/branches as soon as there are some things to post. 
+As of now the frontend may be integrated/developed here as opposed to a standalone repository, but this detail is still being considered... I will post links to repositories/branches as soon as there are some things to post. 
 
 Lastly, as a part of the required coursework there will be weekly dev-log updates to track the progress being made, with the next post intending to layout a more detailed feature-set to define the 'MVP'. I'm eager to get started and looking forward to the 'blue-sky' planning phase coming next week where I can ideate and iterate on the lessons learned from the prototype.
 
