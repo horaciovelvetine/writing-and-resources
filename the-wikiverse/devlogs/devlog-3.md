@@ -4,7 +4,7 @@ It's another week at the Wikiverse and details are being ironed out in the plann
 
 ## A Datamodel:
 
-![Wikiverse Data model Overview](https://github.com/horaciovelvetine/writing-and-resources/blob/main/assets/wikiverse-api-datamodel-overview-v1.png)
+![Wikiverse Data model Overview](https://raw.githubusercontent.com/horaciovelvetine/writing-and-resources/assets/wikiverse-api-datamodel-overview-v1.png)
 
 Big thanks to [draw.io](https://app.diagrams.net/) for providing an excellent free tool for creating diagrams, it's a tremendous help for organizing and planning.
 
